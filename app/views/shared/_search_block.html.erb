@@ -1,0 +1,10 @@
+<div class="level_2">
+    <div class="login">
+    	<%= form_for(@user = User.new,:url => session_path(@user)) do |f| %>
+			<%= f.email_field :email, :placeholder => "Email ID"%>
+			<%= f.password_field :password, :placeholder => "Password"%>
+    		<%= f.submit "Login", :class => "btn btn-success", :style => "margin-bottom: 10px;"%>
+    	<%end%>
+    </div>
+</div>
+

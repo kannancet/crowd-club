@@ -1,0 +1,28 @@
+<%content_for :sesson_out_view do %>
+	<div class="signup">
+	<div class="signup_form">
+	<h1>Sign Up</h1>
+	  <form id="form1" name="form1" method="post" action="">
+	<input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'First Name *';}" onfocus="if (this.value == 'First Name *') {this.value = '';}" value="First Name *" />
+	<input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Last Name *';}" onfocus="if (this.value == 'Last Name *') {this.value = '';}" value="Last Name *"  />
+	<input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Contact Number *';}" onfocus="if (this.value == 'Contact Number *') {this.value = '';}" value="Contact Number *" />
+	<input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Email ID *';}" onfocus="if (this.value == 'Email ID *') {this.value = '';}" value="Email ID *" />
+	<h3 style="color: #228B22">OR</h3>
+	<div class="import"><div><input name="" type="checkbox" value="" />
+	<label>Use</label><img src="images/fb.png" /><label>Facebook</label></div>
+	  <div><input name="" type="checkbox" value="" /><label>Import</label><img src="images/tiwtter.png" /><label>Tiwtter</label></div><div><input name="" type="checkbox" value="" /><label>Import</label><img src="images/four-square.png" /><label>FourSquare</label></div></div>
+	<input name="" type="submit" value="Signup" class="input_btn" title="SignUp" />
+	  </form>
+	  </div>
+	</div>
+	<div class="slide">
+	<div id="gamesHolder">
+		<div id="games">
+				<%= images_tag "social-media-friends1"%>
+				<img src="images/slide.jpg" alt="Mini Ninjas" />		
+				<img src="images/slide2.jpg" alt="Spiderman: Shattered Dimensions" />
+				<img src="images/slide3.jpg" alt="Brink" />		
+		</div>
+	</div>
+	</div>
+<%end%>

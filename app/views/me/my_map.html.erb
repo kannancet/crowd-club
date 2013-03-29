@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    </style>
+    <%= javascript_include_tag 'jquery'%>
+    <%= stylesheet_link_tag "gmap"%>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBaYepl61zkgz34rDEjpUIPQwQySyOC0AI&sensor=false"%>
+	<script type="text/javascript">
+		//This function is used to initialize the google maps. 
+		  function initialize() {
+		  	var lat = <%= current_user.latitude%>
+		  	var lng = <%= current_user.longitude%>
+		  	// Loading the basic map with current user lat and long.
+		    var mapOptions = {
+		      center: new google.maps.LatLng(lat, lng),
+		      zoom: 8,
+		      mapTypeId: google.maps.MapTypeId.ROADMAP
+		    };
+		    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+		        
+			// Creating a marker and putting it on the map
+			 latLng = new google.maps.LatLng(lat, lng); 
+	          var marker = new google.maps.Marker({
+	            position: latLng,
+	            map: map,
+	            animation: google.maps.Animation.DROP,
+	            title: "<%= current_user.address %>",
+	            icon: "http://" + document.location.host + "<%= asset_path('marker.png')%>",
+	            draggable: true
+	          });
+	          
+	        // Add location info popup-box.
+			  var infoWindow = new google.maps.InfoWindow();
+                google.maps.event.addListener(marker, "mouseover", function(e) {
+                  infoWindow.setContent("<%= current_user.address %>");
+                  infoWindow.open(map, marker);
+                });
+              
+            // Add marker bounce effect on hover 
+				google.maps.event.addDomListener(marker,"mouseover", function(o){
+			                    this.setAnimation(google.maps.Animation.BOUNCE);
+			    });
+				google.maps.event.addListener(marker, 'dragend', function(evt){
+					$("#loader").show();
+					var new_lat = evt.latLng.lat().toFixed(3);
+					var new_lng = evt.latLng.lng().toFixed(3);
+					$.ajax({
+						type: "POST",
+						beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));},
+						url: "/me/update_my_location",
+						data: {new_lat: new_lat, new_lng: new_lng},
+						success: function(msg){
+								if (msg){
+									console.log($("#user_address"));
+									$("#user_address").html("<%= current_user.address%>");
+								}
+								else{
+									$("#user_address").html("Error updating location. Please try again");
+								}
+								window.location.reload();
+						}
+					});		
+				});
+			}
+	</script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"><%= image_tag "loader-green.gif", :id => "loader"%></div>
+  </body>
+</html>

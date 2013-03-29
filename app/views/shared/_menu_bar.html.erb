@@ -1,0 +1,17 @@
+<!-- Menu bar goes here.-->
+    <div class="level_2">
+    	<a href="/me" class="menu_me" style="<%= @me_tab%>">Me</a>
+    	<a href="/explore" class="menu_explore" style="<%= @explore_tab%>">Explore</a>
+    	<a href="/buddies" class="menu_buddies" style="<%= @buddy_tab%>">Buddies</a>
+    	<a href="/feeds" class="menu_feeds" style="<%= @feed_tab%>">Feeds</a>
+<div class="btn-toolbar" style="margin: 0;">
+    <div class="btn-group" style="margin-left: 100%;margin-top: -42px;">
+        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <%= render_full_name%>&nbsp;<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/users/sign_out"><i class="icon-wrench"></i>&nbsp;Settings</a></li>
+            <li><a href="/users/sign_out"><i class="icon-off"></i>&nbsp;Logout</a></li>
+        </ul>             
+    </div>
+</div>
+    </div>
+    

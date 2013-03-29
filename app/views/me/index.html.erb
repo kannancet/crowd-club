@@ -1,0 +1,73 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log($('#scrollbar1'));
+		$('#scrollbar1').tinyscrollbar();		
+	});
+</script>
+<!-- Me header.--> 
+<div class="list" style="margin-top: 20px;"><%= image_tag "me_icon.png", :height => "32", :width => "32"%><label>My Space</label></div>
+
+<!-- User Data starts here.-->   
+<!-- User Info goes here.-->   
+<div class="feeds build well" style="width: 96%;">
+	<%= image_tag "user.png", :class => "user"%>
+    <div style="padding-top: 22px;padding-left: 140px;"> 
+    	<table>
+    		<th style="width: 4%"></th>
+    		<tr>
+    			<td><%= image_tag "user geen.png", :width => "64", :height => "64"%></td>
+    			<td><h1 style="margin-top: 2px; color: #49AFCD;"><%= display_user_name %></h1></td>
+    			<td><%= image_tag "green_star.png", :width => "40", :height => "40"%></td>
+    			<td><%= render_rating%></td>
+    			<td><%= image_tag "upload.png", :width => "32", :height => "32"%></td>
+    			<td><a href="/users/sign_in"><h1 style="margin-top: 2px; margin-left: -2px; color: #49AFCD;">click to upload image</h1></a></td>	
+    		</tr>
+    		<tr>
+    			<td><%= image_tag "email.png", :width => "32", :height => "32"%></td>
+    			<td><h1 style="margin-top: 2px; color: #49AFCD;"><%= current_user.email%></h1></td>	
+    			<td>
+					<a class="googleMapPopUp" rel="nofollow" href="#" target="_blank">
+						<%= image_tag "location.png", :width => "32", :height => "32", :title => "Click to 'View' or 'Change' location."%> 
+					</a>	        		
+    			</td>
+    			<td><h1 id="user_address" style="margin-top: 2px; color: #49AFCD;"><%= current_user.address.split(",").last%></h1></td>
+    			<td><%= image_tag "edit_location.png", :width => "40", :height => "40"%></td>
+    			<td><a href="/users/sign_in"><h1 style="margin-top: 2px; margin-left: -2px; color: #49AFCD;">click to edit location</h1></a></td>
+    		</tr>
+    	</table>
+	</div>
+</div>
+
+<!-- User Badges goes here.--> 
+<div class="list"><%= image_tag "user_badge.png", :width => "32", :height => "32"%><label>My Reputations</label></div>
+  <div class="feeds build_2" id="scrollbar1">
+		
+		<!-- Feeds list goes here. -->
+		<ul class="thumbnails">
+			<%12.times do |i|%>
+				<li class="span3">
+				  <div class="thumbnail well">
+				  	<%if i<2%>
+				    	<%= image_tag "badge_on.png"%>
+				    <%else%>
+				    	<%= image_tag "badge_off.png"%>
+				    <%end%>
+				    <div class="caption">
+				      <h5>Newbie</h5>
+				      <h5>
+				      	<p>
+				    		<i class="icon-calendar"></i> <small> Sept 16th, 2012 at 4:20 pm</small>
+				    	</p>
+				      </h5>
+				      <p>Your first check-in! Foursquare keeps track of your adventures and milestones, like visiting five new sushi spots or galleries. And with every check-in, we learn about what you like and can give you better recommendations.</p>
+				      <p><hr /></p>
+				      <p><a href="#" class="btn btn-success">Leader Board →</a></p><br />
+				    </div>
+				  </div>
+				</li>
+			<%end%>
+		</ul>  	
+  </div>       
+
+        
+

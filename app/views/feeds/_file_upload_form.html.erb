@@ -1,0 +1,13 @@
+<!-- The file upload form used as target for the file upload widget -->
+<div class="fileupload fileupload-new" data-provides="fileupload">
+    <select class="span4" name="technology_id">
+    	<option value="global">Which category will you add this feed to?</option>
+    	<option value="mine">My Resources</option>
+	</select>
+	<div class="fileupload-new thumbnail" style="width: 200px; height: 150px; margin-top: 3%;"><%= image_tag "no-image.gif"%></div>
+	<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+	<div>
+	<span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+	<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+	</div>
+</div>

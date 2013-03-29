@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Crown - Club</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/coin-slider.min.js"></script>
+<script>$(document).ready(function() {
+	$('#games').coinslider({ hoverPause: false });
+});
+</script>
+
+<link rel="stylesheet" href="css/coin-slider-styles.css" type="text/css" />
+</head>
+
+<body>
+	<div id="main_div">
+    
+    	<div id="inner_div">
+        		<div class="header"><a class="logo" href="#"></a><div class="search"><input type="text"   name="search" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" value="Search" class="search_txt" /><input name="" type="submit" class="search_btn" value="" /></div></div>
+                <div class="level_2"><div class="login"><input   type="text" name="email" onblur="if (this.value == '') {this.value = 'Enter email ID';}" onfocus="if (this.value == 'Enter email ID') {this.value = '';}" value="Enter email ID"  class="input_txt" /> <input onblur="if (this.value == '') {this.value = '**********';}" onfocus="if (this.value == '**********') {this.value = '';}" value="**********" type="password" class="input_txt" /> 
+                <input type="button" class="input_btn" value="Login" />
+                </div></div>
+                <div class="container">
+                	
+                	<div class="signup">
+                    <div class="signup_form">
+                    <h1>Sign Up</h1>
+                	  <form id="form1" name="form1" method="post" action="">
+                	    <input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'First Name *';}" onfocus="if (this.value == 'First Name *') {this.value = '';}" value="First Name *" />
+                        <input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Last Name *';}" onfocus="if (this.value == 'Last Name *') {this.value = '';}" value="Last Name *"  />
+                        <input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Contact Number *';}" onfocus="if (this.value == 'Contact Number *') {this.value = '';}" value="Contact Number *" />
+                        <input name="textfield" type="text" class="sign_txt" id="textfield" onblur="if (this.value == '') {this.value = 'Email ID *';}" onfocus="if (this.value == 'Email ID *') {this.value = '';}" value="Email ID *" />
+                        <div class="import"><div><input name="" type="checkbox" value="" />
+                        <label>Import</label><img src="images/fb.png" /><label>Facebook</label></div>
+                          <div><input name="" type="checkbox" value="" /><label>Import</label><img src="images/tiwtter.png" /><label>Tiwtter</label></div><div><input name="" type="checkbox" value="" /><label>Import</label><img src="images/four-square.png" /><label>FourSquare</label></div></div>
+                        <input name="" type="submit" value="Signup" class="input_btn" title="SignUp" />
+              	    </form>
+                	  </div></div><div class="slide">
+                    <div id="gamesHolder">
+		<div id="games">
+				<img src="images/slide.jpg" alt="Mini Ninjas" />		
+				<img src="images/slide2.jpg" alt="Spiderman: Shattered Dimensions" />
+				<img src="images/slide3.jpg" alt="Brink" />		</div>
+	</div></div>
+                </div>
+        </div>
+        <div id="footer">
+        	<div class="footer">
+            	<a href="#" class="home">Home</a>
+                <a href="#" class="queries">Queries</a>
+                <a href="#" class="filter">Filter</a>
+                <p>
+
+Copyright &copy; 2012 Crown - Club. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

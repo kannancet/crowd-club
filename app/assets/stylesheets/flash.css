@@ -1,0 +1,21 @@
+.flash_notice { 
+background: #e5f2be; 
+border:2px solid #bedf5d; 
+padding:10px; 
+font-weight:bold;
+height: 100%;
+width: 100%;
+}
+
+.flash_error {
+background: #eccecf;
+border:2px solid #9e0b0f;
+padding:10px;
+font-weight:bold;
+height: 100%;
+width: 100%;
+}
+
+.flash_notice img, .flash_notice img {
+float:right;
+}

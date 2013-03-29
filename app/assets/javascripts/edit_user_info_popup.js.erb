@@ -1,0 +1,18 @@
+//This is used to render the form for editing the user data.
+$(document).ready(function(){
+	$('#edit_info_icon').each(function() {
+	    var thisPopup = $(this);
+	    thisPopup.colorbox({
+	        iframe: true,
+	        innerWidth: 600,
+	        innerHeight: 400,
+	        opacity: 0.7,
+	        scrolling: true,
+	        href: "http://" + document.location.host + "/me/edit_user_info"
+	    });
+	});
+	
+	$(document).bind('cbox_closed', function(){
+	    window.location.reload();
+	});
+});

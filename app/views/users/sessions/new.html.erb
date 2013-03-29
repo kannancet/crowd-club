@@ -1,0 +1,28 @@
+<%content_for :session_out_view do %>
+	<div class="signup">
+	<div class="signup_form">
+	<h1>Sign Up</h1>
+    	<%= form_for(@user = User.new,:url => session_path(@user), :method => "post") do |f| %>
+    		<%= f.text_field :first_name, :placeholder => "First Name"%>
+    		<%= f.text_field :last_name, :placeholder => "Last Name"%>
+			<%= f.email_field :email, :placeholder => "Email ID"%>
+			<%= f.password_field :password, :placeholder => "Password"%>
+			<h1>OR</h1>
+			<div class="import"><div><input name="facebook" type="radio" value="facebook" />
+			<label>Use</label><%= image_tag "fb.png"%><label>Facebook</label></div>
+			  <div><input name="twitter" type="radio" value="twitter" /><label>Use</label><%= image_tag "tiwtter.png"%><label>Tiwtter</label></div><div><input name="foursquare" type="radio" value="foursquare" /><label>Use</label><%= image_tag "four-square.png"%><label>FourSquare</label></div>
+			  </div>
+    		<%= f.submit "Sign Up", :class => "btn btn-success", :style => "margin-bottom: 10px;"%>
+    	<%end%>
+	  </div>
+	</div>
+	<div class="slide">
+	<div id="gamesHolder">
+		<div id="games">
+				<%= image_tag "slide.jpg"%>
+				<%= image_tag "slide2.jpg"%>
+				<%= image_tag "slide3.jpg"%>
+		</div>
+	</div>
+	</div>
+<%end%>

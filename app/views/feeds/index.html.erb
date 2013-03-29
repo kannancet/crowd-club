@@ -1,0 +1,161 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	
+$('#test').click(function(){
+  $('#test').animate({height:'135px'}, 500);
+  $(this).animate({height:'400px'}, 500).promise().done(function(){
+  $('html,body').animate({scrollTop: $(this).offset().top},500);
+    $(this).addClass('current').unbind('click');
+  });
+	});
+	
+});
+</script>
+
+<!-- List of available categories are defined here-->
+<div class="controls controls-row">
+	<table>
+		<tr>
+			<h3 style="color: green;"><i class="icon-tags"></i> Categories
+			<button type="submit" data-toggle="modal" href="#new_feed_modal" class="btn btn-info" style="margin-left: 60%;">Create Feed</button>
+			</h3>
+		</tr>
+	</table>
+		<hr />
+
+<ul class="thumbnails" id="myCarousel" style="padding-left: 6%;">
+    <li class="span1">
+         <a href="#"><%= image_tag "category/news.png"%> <h5><label>Hot News</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#" id="test"><%= image_tag "category/education.png"%><h5><label>Education</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/sports.png"%><h5><label>Sports</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/atm.png"%><h5><label>ATM</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/office.png"%><h5><label>Office</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/religion.png"%><h5><label>Religion</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/restaurant.png"%><h5><label>Restaurant</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/travel.png"%><h5><label>Travel</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/telecom.png"%><h5><label>Telecom</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/tourism.png"%><h5><label>Tourism</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/bank.png"%><h5><label>Banks</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/hospital.png"%><h5><label>Hospitals</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/shop.png"%><h5><label>Shops</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/traffic.png"%><h5><label>Traffic</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/internet.png"%><h5><label>Internet</label></h5></a>
+    </li>
+    <li class="span1">
+         <a href="#"><%= image_tag "category/misc.png"%><h5><label>Miscellaneous </label></h5></a>
+    </li>
+</ul>
+
+<hr />
+
+<!-- Filter feeds based on location and date. -->
+<form method="POST" action="#" accept-charset="UTF-8">
+	<div class="controls controls-row">
+		<table>
+			<tr>
+				<td><h3 style="color: green;"><i class=" icon-th-list"></i> Feeds</h3></td>
+			    <td>
+				    <select id="e1" class="span3" name="technology_id">
+				    	<option value="global">Location</option>
+				    	<option value="mine">My Resources</option>
+					</select>
+				</td>
+				<td>
+				    <select id="e2" class="span3" name="resource_type">
+				    	<option value="global">My or Others</option>
+				    	<option value="mine">My Resources</option>
+					</select>
+				</td>
+				<td>
+		   	 		<button type="submit" class="btn btn-success" style="margin-left: 60%;">Filter</button>
+		   	 	</td>
+		    </tr>
+		</table>
+	 </div>
+</form>
+<hr />
+
+<!-- Feeds list goes here. -->
+<ul class="thumbnails">
+	<%50.times do %>
+		<li class="span3">
+		  <div class="thumbnail">
+		    <img src="http://placehold.it/260x180" alt="">
+		    <div class="caption">
+		      <h5 style="color: #49AFCD;">Thumbnail label</h5>
+		      <h5>
+		      	<p>
+		    		<i class="icon-calendar"></i> <small>Sept 16th, 2012 at 4:20 pm</small>
+		    	</p>
+		      </h5>
+		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		      <p><hr /></p>
+		      <p><a href="#" class="btn btn-success">Read More →</a></p><br />
+		      <p>
+		      	  <i class="icon-user"></i> <a href="#"><small>Admin</small></a> |
+				  <i class="icon-comment"></i> <a href="#"><small>3 Comments</small></a>
+				  | <i class="icon-share"></i> <a href="#"><small>39 Shares</small></a>
+				</p>
+		    </div>
+		  </div>
+		</li>
+	<%end%>
+</ul>
+
+<!-- Build feed form goes here.-->  
+<div class="span4 well modal hide fade" id="new_feed_modal">
+	<h3 style="color: green;"><i class="icon-th-list"></i> Submit New Feed</h3><hr />
+    <form accept-charset="UTF-8" action="" method="POST">
+    	<input placeholder="What is your feed title?" name="heading" class="span4" id="heading" type="text" id="" name=""/>
+        <%= render 'file_upload_form'%>
+        <textarea class="span4" id="new_message" name="new_message"
+        placeholder="How will you describe this feed?" rows="5"></textarea>
+        <h6 class="pull-right">320 characters remaining</h6>
+        <button class="btn btn-success" type="submit">Post New Feed</button>
+    </form>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+

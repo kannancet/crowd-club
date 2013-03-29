@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Crown - Club</title>
+<!-- Stylesheets are defined here-->
+<%= javascript_include_tag "application"%>
+<%= stylesheet_link_tag "application"%>
+</head>
+<body>
+	<div id="main_div">
+    	<div id="inner_div">
+			<%= render "shared/header"%>
+			<%unless user_signed_in?%>
+				<%= render "shared/search_block"%>
+			<%else%>
+				<%= render "shared/menu_bar"%>
+			<%end%>
+            <div class="container">
+            	<br />
+            <%if flash[:notice] || flash[:error]%>
+				<div id="flash" class="reveal-modal">
+					<%if flash[:error]%>
+				     	<h1 style="color: #9e0b0f" >Oops!!! <%= image_tag "red-face-smiley-emoticon.gif"%></h1>
+					<%else%>
+						<h1 style="color: #228B22" >Hurray!!! <%= image_tag "smiley.png"%></h1>
+					<%end%>
+					<%= show_flash_message%>
+				</div>
+			<%end%>
+			<%if session[:first_login].nil?%>
+				<div id="test">
+				<%= render 'shared/location_modal'%>
+				</div>
+			<%end%>
+            	<%if user_signed_in?%>
+            		<%= yield%>
+            	<%else%>
+					<%= yield :session_out_view%>
+				<%end%>
+            </div>
+        </div>
+		<%= render "shared/footer"%>
+    </div>
+</body>
+</html>

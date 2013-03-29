@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/brokersoft/!svn/ver/486/trunk/BBC/app/mailers
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/brokersoft/!svn/ver/2/trunk/BBC/app/mailers/.gitkeep
+END
+user_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/brokersoft/!svn/ver/486/trunk/BBC/app/mailers/user_mailer.rb
+END

@@ -1,0 +1,101 @@
+
+<div class="list"><%= image_tag "buddies_icon.png", :height => "32", :width => "32"%><label>Buddy List</label></div>
+<!-- Filter buddies based on location or name. -->
+<form method="POST" action="#" accept-charset="UTF-8">
+	<div class="controls controls-row">
+		<table style="align: left;">
+			<tr>
+			    <td>
+				    <select id="e3" class="span4" name="buddies_search">
+				    	<option value="global">Search by name or location</option>
+				    	<option value="mine">My Resources</option>
+					</select>
+				</td>
+			    <td>
+				    <select id="e2" class="span4" name="buddies_search">
+				    	<option value="global">My Buddies</option>
+				    	<option value="mine">Not My Buddies</option>
+				    	<option value="mine">All Buddies</option>
+					</select>
+				</td>
+				<td>
+		   	 		<button type="submit" class="btn btn-success" style="margin-left: 1em;">Filter</button>
+		   	 	</td>
+		    </tr>
+		</table>
+	 </div>
+</form>
+<hr />
+
+<!-- Buddy list goes here. -->
+<div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Buddy</th>
+          <th>Reputations</th>
+          <th>Feeds</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><%= image_tag "me_icon.png", :width => "32", :height => "32", :class => "img-rounded"%></td>
+          <td>Mark</td>
+          <td>Newbie   <a href="#myModal" role="button" data-toggle="modal"> ( view all )</a></td>
+          <td>Total : 30 <a href="#"> ( view all )</a></td>
+          <td>Kerala, Inida</td>
+          <td>
+          	<a href="#myModal" role="button" data-toggle="modal" style="padding: 4px;"><i class="icon-map-marker"></i></a>
+          	<a href="#myModal" role="button" data-toggle="modal" style="padding: 4px;"><i class="icon-plus-sign"></i></a>
+          	<a href="#myModal" role="button" data-toggle="modal" style="padding: 4px;"><i class="icon-minus-sign"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><%= image_tag "me_icon.png", :width => "32", :height => "32", :class => "img-rounded"%></td>
+          <td>Mark</td>
+          <td>Newbie   <a href="#myModal" role="button" data-toggle="modal"> ( view all )</a></td>
+          <td>Total : 30 <a href="#"> ( view all )</a></td>
+           <td>Kerala, Inida</td>
+           <td><a href="#myModal" role="button" data-toggle="modal"><i class="icon-map-marker"></i></a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><%= image_tag "me_icon.png", :width => "32", :height => "32", :class => "img-rounded"%></td>
+          <td>Mark</td>
+          <td>Newbie   <a href="#myModal" role="button" data-toggle="modal"> ( view all )</a></td>
+          <td>Total : 30 <a href="#"> ( view all )</a></td>
+           <td>Kerala, Inida</td>
+           <td><a href="#myModal" role="button" data-toggle="modal"><i class="icon-map-marker"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="pagination">
+    <ul>
+        <li><a href="#">Prev</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">Next</a></li>
+    </ul>
+</div>
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Delete Confirmation</h3>
+    </div>
+    <div class="modal-body">
+        <p class="error-text">Are you sure you want to delete the user?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+    </div>
+</div>

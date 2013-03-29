@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  history_latitude: 1.5
+  history_longitude: 1.5
+  history_address: MyText
+
+two:
+  history_latitude: 1.5
+  history_longitude: 1.5
+  history_address: MyText

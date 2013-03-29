@@ -1,0 +1,17 @@
+//This is used to pop-up Google maps as modal window.
+$(document).ready(function(){
+	$('.googleMapPopUp').each(function() {
+	    var thisPopup = $(this);
+	    thisPopup.colorbox({
+	        iframe: true,
+	        innerWidth: 600,
+	        innerHeight: 400,
+	        opacity: 0.7,
+	        href: "http://" + document.location.host + "/me/my_map"
+	    });
+	});
+	
+	$(document).bind('cbox_closed', function(){
+	    window.location.reload();
+	});
+});
